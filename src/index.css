@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Wix+Madefor+Display:wght@400..800&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: Lato;
+  /*
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,8 +14,10 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
+
+
 
 a {
   font-weight: 500;
@@ -23,11 +29,14 @@ a:hover {
 }
 
 body {
+  background-color: #181828;
+}
+
+html, body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden; /* чтобы убрать горизонтальный скролл */
+  height: 100dvh;
 }
 
 h1 {

@@ -1,0 +1,66 @@
+.match-item {
+    background-color: #262636;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px;
+    border-radius: 30px;
+}
+
+.middle-line {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.top-line {
+    font-size: 11px;
+    text-align: center;
+}
+
+.time {
+    font-size: 24px;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.team-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.team-wrapper.left {
+    justify-content: flex-start;
+}
+
+.team-wrapper.right {
+    justify-content: flex-end;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    gap: 6px;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.team-title {
+    font-size: 14px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
