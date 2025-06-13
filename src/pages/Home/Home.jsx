@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import './Home.css'
 import '../components/MainMatchView/MainMatchView'
 import MainMatchView from '../components/MainMatchView/MainMatchView';
+import { getDisplayDateLabel } from '../../utils/dateUtils';
+
 
 const games = [
   { id: '1', name: 'Игра 1' },
@@ -80,16 +82,10 @@ export default function Home() {
   const sortedDates = Object.keys(groupedMatches).sort();
 
   return (
-    <div style={{ padding: '10px 0' }}>
+    <>
       {sortedDates.map(date => (
         <div className="date-group" key={date}>
-          <h2>
-            {new Date(date).toLocaleDateString('ru-RU', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
-            })}
-          </h2>
+          <div className='date-title'>{getDisplayDateLabel(date)}</div>
 
           {groupedMatches[date]
             .sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
@@ -98,6 +94,6 @@ export default function Home() {
             ))}
         </div>
       ))}
-    </div>
+    </>
   );
 }

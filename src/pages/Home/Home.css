@@ -1,5 +1,13 @@
 .date-group {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 6px;
+}
+
+.date-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 6px;
+    
 }
