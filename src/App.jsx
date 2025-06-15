@@ -6,7 +6,7 @@ import Game from './pages/Game/Game';
 
 function App() {
   return (
-    <BrowserRouter basename="/football-manager">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/game/:gameId" element={<Game />} />
