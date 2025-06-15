@@ -1,0 +1,38 @@
+.middle-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.inner-match-item {
+    padding: 22px 14px;
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    height: calc(30% - 44px);
+    justify-content: space-between;
+}
+
+.inner-match-item .team-logo {
+    width: 70px;
+    height: 70px;
+}
+
+.referee,
+.stadium {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.bottom-line {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

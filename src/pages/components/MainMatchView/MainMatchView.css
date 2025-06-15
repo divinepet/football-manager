@@ -3,8 +3,9 @@
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 16px 20px;
+    padding: 12px 14px;
     border-radius: 30px;
+    overflow: hidden;
 }
 
 .middle-line {
@@ -55,6 +56,7 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+/* boxShadow: "0px -35px 70px 6px #0ff" */
 
 .team-title {
     font-size: 14px;

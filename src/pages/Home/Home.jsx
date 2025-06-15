@@ -83,6 +83,7 @@ export default function Home() {
 
   return (
     <>
+    <div className='main-wrapper'>
       {sortedDates.map(date => (
         <div className="date-group" key={date}>
           <div className='date-title'>{getDisplayDateLabel(date)}</div>
@@ -94,6 +95,7 @@ export default function Home() {
             ))}
         </div>
       ))}
+      </div>
     </>
   );
 }
