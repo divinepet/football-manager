@@ -9,7 +9,7 @@ $content-distance: 16px;
     padding: $tab-container-p;
     max-width: 400px;
     margin: 0 auto;
-    height: calc(75% - $tab-container-p * 2);
+    // height: calc(75% - $tab-container-p * 2);
 
     .tabs {
         display: flex;
@@ -26,8 +26,6 @@ $content-distance: 16px;
             font-weight: 500;
             color: #8d8d97;
             transition: color 0.3s ease;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .tab.active {

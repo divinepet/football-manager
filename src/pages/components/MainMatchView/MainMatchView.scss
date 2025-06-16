@@ -1,4 +1,5 @@
 .match-item {
+    position: relative;
     background-color: #262636;
     color: #ffffff;
     display: flex;
@@ -57,3 +58,46 @@
         }
     }
 }
+
+.match-item.fcwc {
+    background-color: #000000;
+}
+.overlay.fcwc {
+    background: url(https://imagecache.365scores.com/image/upload/f_png,w_120,h_120,c_limit,q_auto:eco,dpr_2,d_Countries:Round:2.png/v5/Competitions/5096) no-repeat center / contain;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -65px;
+}
+
+
+
+.match-item.ucl {
+    background: linear-gradient(45deg, #0f111a, #022eef);
+}
+.overlay.ucl {
+    background: url(https://imagecache.365scores.com/image/upload/f_png,w_120,h_120,c_limit,q_auto:eco,dpr_2,d_Countries:Round:2.png/v5/Competitions/572) no-repeat center / contain;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -65px;
+}
+
+
+.match-item.laliga {
+    background: #ff4a42;
+}
+.overlay.laliga {
+    background: url(https://imagecache.365scores.com/image/upload/f_png,w_120,h_120,c_limit,q_auto:eco,dpr_2,d_Countries:Round:2.png/v5/Competitions/11) no-repeat center / contain;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -65px;
+}
+
