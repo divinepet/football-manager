@@ -1,0 +1,50 @@
+$match-vertical-p: 12px;
+
+.inner-match-item {
+    padding: $match-vertical-p 14px;
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    height: calc(25% - $match-vertical-p * 2);
+    justify-content: space-evenly;
+
+    .middle-line {
+
+        .team-wrapper .team .team-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .team-wrapper.left {
+            justify-content: center;
+        }
+
+        .team-wrapper.right {
+            justify-content: center;
+        }
+
+    }
+}
+
+.referee,
+.stadium {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+.bottom-line {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inner-match-item .team-logo {
+    width: 70px !important;
+    height: 70px !important;
+}

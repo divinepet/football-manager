@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import './MainMatchView.css'
+// import './MainMatchView.css'
+import './MainMatchView.scss'
 import { getTimeFromDate, getTeamLogo } from '../../../utils/dateUtils'
 
 function MainMatchView({ match }) {
@@ -9,7 +10,7 @@ function MainMatchView({ match }) {
     return (
         <Link to={`/game/${match.id}`} className="match-link">
 
-            <div className='match-item'>
+            <div className='match-item outer-match-item'>
                 <div className='top-line'>{match.competitionDisplayName}</div>
 
                 <div className="middle-line">

@@ -1,0 +1,54 @@
+.h2h-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    background-color: #262636;
+    padding: 10px;
+    border-radius: 16px;
+
+    .h2h-team {
+        width: 42%;
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .team-name {
+            white-space: wrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 14px;
+        }
+
+        .team-logo {
+            width: 34px;
+            height: 34px;
+            background-color: blueviolet;
+        }
+    }
+
+    .h2h-team.left {
+        text-align: right;
+    }
+
+    .h2h-team.right {
+        text-align: left;
+        flex-direction: row-reverse;
+    }
+
+    .h2h-middle {
+        width: 16%;
+
+        .score {
+            font-size: 22px;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #676775;
+        }
+    }
+
+}
