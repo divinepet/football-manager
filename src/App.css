@@ -5,4 +5,5 @@
   user-select: none;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  height: calc(100svh - 40px);
 }
