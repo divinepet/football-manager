@@ -3,14 +3,16 @@ import { useState } from 'react';
 import './Field.scss'
 import { getPlayerLogo } from '../../../utils/dateUtils';
 import { getTeamLogo } from '../../../utils/dateUtils';
+import ExpandableSection from '../ExpandableSection/ExpandableSection';
 
 export default function Field({ game }) {
     const [activeTeam, setActiveTeam] = useState(0);
 
-    // Создаём мапу, где ключ - id, а значение - сам объект игроков для быстрого поиска
     const playersBaseMap = Object.fromEntries(
         game.members.map(player => [player.id, player])
     );
+
+    console.log(game.homeCompetitor.lineups.members)
 
     function renderLineup(teamPlayers) {
         return teamPlayers
@@ -19,18 +21,70 @@ export default function Field({ game }) {
                 const leftOffset = player.yardFormation.fieldSide
                 const bottomOffset = player.yardFormation.fieldLine;
 
-                console.log(player.yardFormation)
-
                 return (
                     <div key={player.id} className='player-item' style={{
                         left: leftOffset + '%',
                         transform: `translate(-${leftOffset}%,${bottomOffset}%)`,
                         bottom: bottomOffset + '%'
                     }}>
-                        <div className='player-image' style={{
-                            background: `url(${getPlayerLogo(playersBaseMap[player.id]?.athleteId)}) no-repeat center / contain`
-                        }}></div>
+                        <div className='player-image' style={{ background: `url(${getPlayerLogo(playersBaseMap[player.id]?.athleteId)}) no-repeat center / contain` }}></div>
                         <div className='player-name'>{playersBaseMap[player.id]?.shortName || 'Без имени'}</div>
+                    </div>
+                );
+            });
+    }
+
+    function renderPlayerList(teamPlayers, filterFn, showReason = false) {
+        return teamPlayers
+            .filter(filterFn)
+            .map(player => {
+                const playerData = playersBaseMap[player.id];
+                const playerImage = `url(${getPlayerLogo(playerData?.athleteId)}) no-repeat center / contain`;
+
+                return (
+                    <div className="player-list-item" key={player.id}>
+                        <div className="player-image" style={{ background: playerImage }}></div>
+                        <div className="player-right">
+                            <div className="player-name">{playerData?.name}</div>
+                            {showReason && <div className="player-reason">Reason</div>}
+                        </div>
+                    </div>
+                );
+            });
+    }
+
+    function renderSubtitlesList(teamPlayers) {
+        return teamPlayers
+            .filter(player => player.status === 2)
+            .map(player => {
+                const playerImage = `url(${getPlayerLogo(playersBaseMap[player.id]?.athleteId)}) no-repeat center / contain`
+
+                return (
+                    <div className='player-list-item' key={player.id}>
+                        <div className='player-image' style={{ background: playerImage }}></div>
+                        <div className='player-right'>
+                            <div className='player-name'>{playersBaseMap[player.id]?.name}</div>
+                        </div>
+
+                    </div>
+                );
+            });
+    }
+
+    function renderMissingList(teamPlayers) {
+        return teamPlayers
+            .filter(player => player.status !== 1 && player.status !== 2)
+            .map(player => {
+                const playerImage = `url(${getPlayerLogo(playersBaseMap[player.id]?.athleteId)}) no-repeat center / contain`
+
+                return (
+                    <div className='player-list-item' key={player.id}>
+                        <div className='player-image' style={{ background: playerImage }}></div>
+                        <div className='player-right'>
+                            <div className='player-name'>{playersBaseMap[player.id]?.name}</div>
+                            <div className='player-reason'>Reason</div>
+                        </div>
+
                     </div>
                 );
             });
@@ -57,15 +111,34 @@ export default function Field({ game }) {
             </div>
 
             <div className='field'>
-
                 <div className='players'>
-                    {activeTeam === 0 && renderLineup(game.homeCompetitor.lineups.members)}
-                    {activeTeam === 1 && renderLineup(game.awayCompetitor.lineups.members)}
+                    {renderLineup(activeTeam === 0
+                            ? game.homeCompetitor.lineups.members
+                            : game.awayCompetitor.lineups.members
+                    )}
                 </div>
-
                 <FieldImage bg='#262636' fg='#ffffff' />
-
             </div>
+
+            <ExpandableSection title="Запасные">
+                <div className='subtitles'>
+                    {renderPlayerList(activeTeam === 0
+                            ? game.homeCompetitor.lineups.members
+                            : game.awayCompetitor.lineups.members
+                    , player => player.status === 2)}
+                </div>
+            </ExpandableSection>
+
+            <ExpandableSection title="Отсутствуют">
+                <div className='missing'>
+                    {renderPlayerList(activeTeam === 0
+                            ? game.homeCompetitor.lineups.members
+                            : game.awayCompetitor.lineups.members
+                    , player => player.status !== 1 && player.status !== 2, true)}
+                </div>
+            </ExpandableSection>
+
+
         </div>
 
     )

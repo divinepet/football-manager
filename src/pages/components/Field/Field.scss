@@ -1,90 +1,118 @@
 $field-padding: 20px;
+$slider-height: 32px;
 
 .field-wrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
 
-.players {
-    position: absolute;
-    margin: auto;
-    width: calc(100% - $field-padding * 2);
-    height: calc(100% - $field-padding * 2);
-    padding: $field-padding;
-    box-sizing: border-box;
-    inset: 0;
-}
+    .team-selector {
+        display: flex;
+        position: relative;
+        height: $slider-height;
+        background: #2a2a3b;
+        border-radius: 12px;
 
-.player-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-}
+        .tab.active {
+            color: #fff;
+        }
 
-.tab-inner {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-}
+        .tab {
+            flex: 1;
+            z-index: 1;
+            text-align: center;
+            padding: 12px 0;
+            cursor: pointer;
+            font-weight: 500;
+            color: #ffffff;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-.tab-logo {
-    width: 20px;
-    height: 20px;
-}
+            .tab-inner {
+                display: flex;
+                justify-content: center;
+                gap: 6px;
 
-.player-item {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
+                .tab-logo {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
 
-.player-name {
-    font-size: 12px;
-    background-color: #4b4b69;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 20px;
-    padding: 2px 6px;
-}
-
-.field {
-    width: 100%;
-    height: 500px;
-    position: relative;
-}
-
-.team-selector {
-    display: flex;
-    position: relative;
-    height: 42px;
-    background: #262636;
-    border-radius: 16px;
-
-    .tab {
-        flex: 1;
-        z-index: 1;
-        text-align: center;
-        padding: 12px 0;
-        cursor: pointer;
-        font-weight: 500;
-        color: #888;
-        transition: color 0.3s ease;
+        .slider {
+            position: absolute;
+            bottom: 0;
+            width: 50%;
+            height: $slider-height;
+            background-color: #424259;
+            border-radius: 10px;
+            transition: left 0.3s ease;
+        }
     }
 
-    .tab.active {
-        color: #fff;
+
+    .field {
+
+        width: 100%;
+        height: 500px;
+        position: relative;
+
+        .players {
+
+            position: absolute;
+            margin: auto;
+            width: calc(100% - $field-padding * 2);
+            height: calc(100% - $field-padding * 2);
+            padding: $field-padding;
+            box-sizing: border-box;
+            inset: 0;
+
+            .player-item {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+
+                .player-image {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 10px;
+                }
+
+                .player-name {
+                    font-size: 12px;
+                    background-color: #4b4b69;
+                    color: #fff;
+                    font-weight: 500;
+                    border-radius: 20px;
+                    padding: 2px 6px;
+                }
+            }
+        }
     }
 
-    .slider {
-        position: absolute;
-        bottom: 0;
-        width: 50%;
-        height: 42px;
-        background-color: #434351;
-        border-radius: 16px;
-        transition: left 0.3s ease;
+
+    .subtitles,
+    .missing {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .player-list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .player-image {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+            }
+        }
     }
+
 }

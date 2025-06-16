@@ -16,6 +16,8 @@ export default function Game() {
 
 	const shadowSize = '60px'
 
+	// Создаём мапу, где ключ - id, а значение - сам объект игроков для быстрого поиска
+
 	useEffect(() => {
 		const fetchGameData = async () => {
 			try {
@@ -90,19 +92,20 @@ export default function Game() {
 
 			<ExpandableSection title="Личные встречи">
 				<div className="h2h">
-					{h2h.length === 0 && <div style={{textAlign: 'center'}}>Команды не играли ранее</div>}
+					{h2h.length === 0 && <div style={{ textAlign: 'center' }}>Команды не играли ранее</div>}
 					{h2h.length > 0 &&
 						h2h.map((match) => <HeadToHeadMatchView key={match.id} match={match} />)}
 				</div>
 			</ExpandableSection>
 
 			<ExpandableSection title="Состав">
-				{game.members
+				{game.members && game.homeCompetitor.lineups.hasFieldPositions && game.awayCompetitor.lineups.hasFieldPositions
 					? <Field game={game} />
-					: <div style={{textAlign: 'center'}}>Состав ещё не определён</div>
+					: <div style={{ textAlign: 'center' }}>Состав ещё не определён</div>
 				}
-				
 			</ExpandableSection>
+
+	
 		</div>
 
 	);

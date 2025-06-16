@@ -10,9 +10,9 @@
     padding: 12px 16px;
     cursor: pointer;
     font-weight: 500;
-    background: #2a2a3b;
+    background: #424259;
     user-select: none;
-    border-radius: 16px;
+    // border-radius: 16px;
   }
 
   .arrow {
@@ -22,9 +22,10 @@
 
   .content {
     overflow: hidden;
+    background-color: #2a2a3b;
   }
 
   .inner {
-    padding: 12px 0;
+    padding: 12px 6px;
   }
 }
