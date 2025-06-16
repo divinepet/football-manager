@@ -1,12 +1,59 @@
+$field-padding: 20px;
+
 .field-wrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+.players {
+    position: absolute;
+    margin: auto;
+    width: calc(100% - $field-padding * 2);
+    height: calc(100% - $field-padding * 2);
+    padding: $field-padding;
+    box-sizing: border-box;
+    inset: 0;
+}
+
+.player-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.tab-inner {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.tab-logo {
+    width: 20px;
+    height: 20px;
+}
+
+.player-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.player-name {
+    font-size: 12px;
+    background-color: #4b4b69;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 2px 6px;
+}
+
 .field {
     width: 100%;
     height: 500px;
+    position: relative;
 }
 
 .team-selector {

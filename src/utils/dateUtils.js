@@ -41,4 +41,4 @@ export function getTimeFromDate(date) {
 
 export function getTeamLogo(id) { return `https://imagecache.365scores.com/image/upload/f_png,w_68,h_68,c_limit,q_auto:eco,dpr_2,d_Competitors:default1.png/v4/Competitors/${id}` }
 export function getCompetitionLogo(id) { return `https://imagecache.365scores.com/image/upload/f_png,w_120,h_120,c_limit,q_auto:eco,dpr_2,d_Countries:Round:2.png/v5/Competitions/light/${id}` }
-export function getPlayerLogo(id) { return `https://imagecache.365scores.com/image/upload/f_png,w_61,h_61,c_limit,q_auto:eco,dpr_2,d_Athletes:default.png,c_thumb,g_face,z_0.65/v13/Athletes/${id}` }
+export function getPlayerLogo(id) { return `https://imagecache.365scores.com/image/upload/f_png,w_61,h_61,c_limit,q_auto:eco,dpr_2,d_Athletes:default.png,c_thumb,g_face,z_0.7/v13/Athletes/${id}` }

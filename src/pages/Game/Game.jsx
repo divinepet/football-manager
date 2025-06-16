@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 import { getTeamLogo, getTimeFromDate } from '../../utils/dateUtils';
 import './Game.scss'
 import { LandPlot, User } from 'lucide-react';
-import TabSlider from '../components/TabSlider/TabSlider';
+import ExpandableSection from '../components/ExpandableSection/ExpandableSection';
+import HeadToHeadMatchView from '../components/HeadToHeadMatchView/HeadToHeadMatchView';
+import Field from '../components/Field/Field';
 
 export default function Game() {
 	const { gameId } = useParams(); // Получаем gameId из URL
@@ -49,7 +51,7 @@ export default function Game() {
 	if (loading) return <p>Загрузка...</p>;
 
 	return (
-		<>
+		<div className='game-page'>
 			<div className='match-item inner-match-item'>
 				<div className='top-line'>{game.competitionDisplayName}</div>
 
@@ -86,8 +88,18 @@ export default function Game() {
 
 			</div >
 
-			<TabSlider h2h={h2h} />
-		</>
+			<ExpandableSection title="Личные встречи">
+				<div className="h2h">
+					{h2h.length === 0 && <div>Нет данных</div>}
+					{h2h.length > 0 &&
+						h2h.map((match) => <HeadToHeadMatchView key={match.id} match={match} />)}
+				</div>
+			</ExpandableSection>
+
+			<ExpandableSection title="Состав">
+				<Field game={game} />
+			</ExpandableSection>
+		</div>
 
 	);
 }

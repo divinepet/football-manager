@@ -1,5 +1,11 @@
 $match-vertical-p: 12px;
 
+.game-page {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .inner-match-item {
     padding: $match-vertical-p 14px;
     border-radius: 30px;
@@ -16,6 +22,12 @@ $match-vertical-p: 12px;
             font-weight: 600;
         }
     }
+}
+
+.h2h {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .referee,
