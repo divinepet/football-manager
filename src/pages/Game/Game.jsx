@@ -48,7 +48,7 @@ export default function Game() {
 		fetchGameData();
 	}, [gameId]);
 
-	if (loading) return <p>Загрузка...</p>;
+	if (loading) return <div className='loader'></div>;
 
 	return (
 		<div className='game-page'>
@@ -82,7 +82,7 @@ export default function Game() {
 				</div >
 
 				<div className='bottom-line'>
-					<div className="referee"><User size={16} />{game.officials[0].name}</div>
+					<div className="referee"><User size={16} />{game.officials?.[0]?.name}</div>
 					<div className="stadium"><LandPlot size={16} />{game.venue.name}</div>
 				</div>
 
@@ -90,14 +90,18 @@ export default function Game() {
 
 			<ExpandableSection title="Личные встречи">
 				<div className="h2h">
-					{h2h.length === 0 && <div>Нет данных</div>}
+					{h2h.length === 0 && <div style={{textAlign: 'center'}}>Команды не играли ранее</div>}
 					{h2h.length > 0 &&
 						h2h.map((match) => <HeadToHeadMatchView key={match.id} match={match} />)}
 				</div>
 			</ExpandableSection>
 
 			<ExpandableSection title="Состав">
-				<Field game={game} />
+				{game.members
+					? <Field game={game} />
+					: <div style={{textAlign: 'center'}}>Состав ещё не определён</div>
+				}
+				
 			</ExpandableSection>
 		</div>
 

@@ -69,7 +69,7 @@ export default function Home() {
     fetchAll();
   }, []);
 
-  if (loading) return <div>Загрузка...</div>;
+  if (loading) return <div className='loader'></div>;
 
   // Группируем и сортируем одним проходом
   const groupedMatches = gameData.reduce((acc, match) => {

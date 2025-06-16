@@ -3,8 +3,6 @@ import { getTeamLogo } from '../../../utils/dateUtils';
 
 export default function HeadToHeadMatchView({ match }) {
 
-    console.log(match)
-
     const formatted = new Date(match.startTime).toLocaleDateString('ru-RU', {
         day: '2-digit',
         month: '2-digit',
