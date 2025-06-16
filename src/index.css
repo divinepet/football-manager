@@ -1,32 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-/* @font-face {
-  font-family: 'MyFont';
-  src: url('./assets/fonts/LTSuperior-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MyFont';
-  src: url('./assets/fonts/LTSuperior-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MyFont';
-  src: url('./assets/fonts/LTSuperior-Semi-bold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MyFont';
-  src: url('./assets/fonts/LTSuperior-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-} */
 
 :root {
   /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
@@ -45,8 +18,6 @@
   -moz-osx-font-smoothing: grayscale; */
 }
 
-
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -58,14 +29,14 @@ a:hover {
 
 body {
   /* background-color: #181828; */
-  background-color: #14141a;
+
 }
 
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* чтобы убрать горизонтальный скролл */
-  /* height: 100%; */
+  background-color: #14141a;
 }
 
 h1 {
