@@ -21,23 +21,32 @@ $slider-height: 32px;
             flex: 1;
             z-index: 1;
             text-align: center;
-            padding: 12px 0;
+            padding: 12px 6px;
             cursor: pointer;
             font-weight: 500;
             color: #ffffff;
             transition: color 0.3s ease;
             display: flex;
             align-items: center;
+            width: calc(50% - 12px);
             justify-content: center;
 
             .tab-inner {
                 display: flex;
                 justify-content: center;
                 gap: 6px;
+                align-items: center;
+                width: 100%;
 
                 .tab-logo {
                     width: 20px;
                     height: 20px;
+                }
+
+                .tab-title {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
         }
@@ -107,10 +116,16 @@ $slider-height: 32px;
             align-items: center;
             gap: 10px;
 
-            .player-image {
+            .player-image,
+            .player-status-image {
                 width: 40px;
                 height: 40px;
                 border-radius: 10px;
+            }
+
+            .player-reason {
+                font-size: 14px;
+                color: #808095;
             }
         }
     }

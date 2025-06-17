@@ -13,7 +13,7 @@ export default function HeadToHeadMatchView({ match }) {
         <div className='h2h-wrapper'>
 
             <div className='h2h-team left'>
-                <div className='team-name'>{match.homeCompetitor.name}</div>
+                <div className='team-name'>{match.homeCompetitor.shortName || match.homeCompetitor.name}</div>
                 <div className='team-logo' style={{
                     background: `url(${getTeamLogo(match.homeCompetitor.id)}) no-repeat center / contain`
                 }}
@@ -26,7 +26,7 @@ export default function HeadToHeadMatchView({ match }) {
             </div>
 
             <div className='h2h-team right'>
-                <div className='team-name'>{match.awayCompetitor.name}</div>
+                <div className='team-name'>{match.awayCompetitor.shortName || match.awayCompetitor.name}</div>
                 <div className='team-logo' style={{
                     background: `url(${getTeamLogo(match.awayCompetitor.id)}) no-repeat center / contain`
                 }}></div>

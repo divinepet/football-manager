@@ -99,10 +99,7 @@ export default function Game() {
 			</ExpandableSection>
 
 			<ExpandableSection title="Состав">
-				{game.members && game.homeCompetitor.lineups.hasFieldPositions && game.awayCompetitor.lineups.hasFieldPositions
-					? <Field game={game} />
-					: <div style={{ textAlign: 'center' }}>Состав ещё не определён</div>
-				}
+				<Field game={game} />
 			</ExpandableSection>
 
 	
