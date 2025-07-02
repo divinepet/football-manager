@@ -7,6 +7,8 @@ function MainMatchView({ match }) {
 
     function getTournament() {
 
+        console.log(match.competitionId)
+
         if (match.competitionId === 5096) {
             return 'fcwc';
         }
@@ -40,7 +42,9 @@ function MainMatchView({ match }) {
                         </div>
                     </div>
 
-                    <div className="time">{getTimeFromDate(match.startTime)}</div>
+                    <div className="time">
+                        {getTimeFromDate(match.startTime)}
+                        </div>
 
                     <div className="team-wrapper right">
                         <div className="team">

@@ -5,13 +5,6 @@ import '../components/MainMatchView/MainMatchView'
 import MainMatchView from '../components/MainMatchView/MainMatchView';
 import { getDisplayDateLabel } from '../../utils/dateUtils';
 
-
-const games = [
-  { id: '1', name: 'Игра 1' },
-  { id: '2', name: 'Игра 2' },
-  { id: '3', name: 'Игра 3' },
-];
-
 export default function Home() {
 
   const [gameData, setGameData] = useState([]);
@@ -43,14 +36,21 @@ export default function Home() {
           )
         );
 
-        // Объединяем, удаляем дубликаты по id
+        // Объединяем все игры в один массив
         const allGames = gamesArrays.flat();
+
+        // Фильтруем игры, убираем те, у которых competitionId == 332
+        const filteredGames = allGames.filter(game => game.competitionId !== 332);
+
+        // Удаляем дубликаты по id
         const uniqueById = new Map();
-        allGames.forEach(game => {
+        filteredGames.forEach(game => {
           if (!uniqueById.has(game.id)) {
             uniqueById.set(game.id, game);
           }
         });
+
+        console.log(uniqueById)
 
         // Сортировка по дате
         const sorted = Array.from(uniqueById.values()).sort(
@@ -83,18 +83,18 @@ export default function Home() {
 
   return (
     <>
-    <div className='main-wrapper'>
-      {sortedDates.map(date => (
-        <div className="date-group" key={date}>
-          <div className='date-title'>{getDisplayDateLabel(date)}</div>
+      <div className='main-wrapper'>
+        {sortedDates.map(date => (
+          <div className="date-group" key={date}>
+            <div className='date-title'>{getDisplayDateLabel(date)}</div>
 
-          {groupedMatches[date]
-            .sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
-            .map(match => (
-              <MainMatchView key={match.id} match={match} />
-            ))}
-        </div>
-      ))}
+            {groupedMatches[date]
+              .sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+              .map(match => (
+                <MainMatchView key={match.id} match={match} />
+              ))}
+          </div>
+        ))}
       </div>
     </>
   );
