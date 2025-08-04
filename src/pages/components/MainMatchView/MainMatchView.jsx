@@ -18,6 +18,16 @@ function MainMatchView({ match }) {
         if (match.competitionId === 572) {
             return 'ucl';
         }
+        if (match.competitionId === 472) {
+            return 'usc';
+        }
+        if (match.competitionId === 5421) {
+            return 'wc_eu';
+        }
+        if (match.competitionId === 613) {
+            return 'wc_am';
+        }
+        
 
         return ''
     }

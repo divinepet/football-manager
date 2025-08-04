@@ -101,3 +101,45 @@
     bottom: -65px;
 }
 
+.match-item.usc {
+    background: #17406C;
+    background: linear-gradient(0deg, rgba(23, 64, 108, 1) 0%, rgba(20, 46, 87, 1) 50%);
+}
+.overlay.usc {
+    background: url(https://imagecache.365scores.com/image/upload/f_png,w_120,h_120,c_limit,q_auto:eco,dpr_2,d_Countries:Round:2.png/v5/Competitions/472) no-repeat center / contain;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -65px;
+}
+
+
+.match-item.wc_eu {
+    background: url('/src/assets/wc.jpg') no-repeat center / cover;
+}
+.overlay.wc_eu {
+    background: url(https://imagecache.365scores.com/image/upload/f_png,w_120,h_120,c_limit,q_auto:eco,dpr_2,d_Countries:Round:2.png/v5/Competitions/5421) no-repeat center / contain;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -65px;
+}
+
+
+.match-item.wc_am {
+    background: url('/src/assets/wc.jpg') no-repeat center / cover;
+}
+.overlay.wc_am {
+    background: url(https://imagecache.365scores.com/image/upload/f_png,w_120,h_120,c_limit,q_auto:eco,dpr_2,d_Countries:Round:2.png/v5/Competitions/613) no-repeat center / contain;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -65px;
+}
+

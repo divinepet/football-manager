@@ -18,7 +18,8 @@ export default function Home() {
           'https://webws.365scores.com/web/games/fixtures?competitors=131,132,134',
           'https://webws.365scores.com/web/games/fixtures?competitors=5061,2378,5050,5054,2379,5028,2372',
           'https://webws.365scores.com/web/games/fixtures?competitions=5096', // FIFA Club World Cup
-          'https://webws.365scores.com/web/games/fixtures?competitions=572' // UEFA Champions League
+          'https://webws.365scores.com/web/games/fixtures?competitions=572', // UEFA Champions League
+          'https://webws.365scores.com/web/games/fixtures?competitions=472'
         ];
 
         // Преобразуем urls, добавляя параметр timezone
